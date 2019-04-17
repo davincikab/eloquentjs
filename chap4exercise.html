@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sum of a data range</title>
+  </head>
+  <body>
+    <script>
+// SUM OF A DATA RANGE
+        function range(a,b, step=1){
+          let range = [];
+          while (a <= b) {
+            range.push(a);
+            a+=step;
+          }
+          return range;
+        }
+
+        function sum([...numbers]){
+          let sum = 0;
+          for (let number of numbers) sum+=number;
+          return sum;
+        }
+
+        console.log(sum(range(1,10,1)));
+
+
+// REVERSE THE ARRAY
+        function reverseArray([...elements]) {
+          for (let elemen of elements) {
+            console.log(elements.indexOf(elemen));
+          }
+        }
+
+        console.log(reverseArray(range(1,10,1)));
+
+        function reverseArrayInPlace([...elements]) {
+          for (let elemen of elements) {
+            console.log(elements.lastIndexOf(elemen));
+          }
+        }
+
+        console.log(reverseArrayInPlace(range(1,30,3)));
+
+// DEEP COMPARISON
+        function deepEqual(val1, vaal2){
+            console.log(typeof (val1));
+            console.log(typeof (vaal2));
+
+            if(typeof val1 == Object ) {  if(Object.values(val1) === vaal2) {return true} else return true; }
+
+            else{ if(typeof val1 === typeof vaal2) return true; else{ return false}}
+        }
+
+
+        // console.log(deepEqual({"name":"David"}, "David"));
+        console.log(deepEqual("David", "Sreinf"));
+
+// CONVERT ARRAY TO LIST
+        function arrayToList([...number]) {
+          let lists = {};
+          for (let num of number) {
+
+            lists.value = num;
+            let rest ={value:num+1, lists};
+            lists.rest = rest;
+            console.log(rest);
+          }
+
+          return lists;
+        }
+
+        console.log(arrayToList([1,2,3]));
+
+        function listToArray({data}) {
+
+        }
+    </script>
+  </body>
+</html>

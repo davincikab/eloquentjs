@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script >
+    // console.log("KENYA");
+    // var a ='#######';
+    // for (var i=a.length;i>0;i--)
+    //     console.log(a.slice(i))
+    //
+    //
+    // for(var i=0;i<=100;i++)
+    //     if(i%3==0 && i%5==0)
+    //       console.log(i+" :FizzBuzz")
+    //
+    //     else if(i%3==0)
+    //       console.log(i+" :Fizz")
+    //
+    //     else if(i%5==0)
+    //       console.log(i+" :Buzz")
+
+        // let size = 8;
+        // let hash ="########"
+        // let space = "________"
+        // for (var i=0;i<size;i++){
+        //   if(i%2==0){
+        //     let bd = space[i]+hash[i];
+        //     console.log(bd+bd+bd+bd);
+        //   }
+        //   else{
+        //     let bd = hash[i]+space[i];
+        //     console.log(bd+bd+bd+bd);
+        //   }
+        // }
+
+        let theNum = Number(prompt("Enter a number."));
+        if(!Number.isNaN(theNum)){
+            document.write(`Square of ${theNum} is:  `+ Math.pow(theNum,2));
+        }
+
+        // let yourName;
+        //
+        // do{
+        //   yourName = prompt("Who are you?")
+        // }while(!yourName);
+        // console.log(yourName);
+        const hummus = function(factor) {
+          const ingredient = function(amount, unit, name) {
+            let ingredientAmount = amount * factor;
+            if (ingredientAmount > 1) {
+               unit += "s";
+             }
+
+            console.log(`${ingredientAmount} ${unit} ${name}`);
+          };
+          ingredient(1, "can", "chickpeas");
+          ingredient(0.25, "cup", "tahini");
+          ingredient(0.25, "cup", "lemon juice");
+          ingredient(1, "clove", "garlic");
+          ingredient(2, "tablespoon", "olive oil");
+          ingredient(0.5, "teaspoon", "cumin");
+        };
+
+        hummus(16);
+    </script>
+  </body>
+</html>

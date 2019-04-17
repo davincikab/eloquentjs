@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>FUNCTIONS IN JAVASCRIPT</title>
+  </head>
+  <body>
+    <script>
+    //   /* ARROW FUNCTIONS */
+    //   let power = (base, exponent)=>{
+    //     let result = 1;
+    //      for( let count=0; count<exponent; count++){
+    //        result*= base;
+    //      }
+    //      return result
+    //   }
+    //   alert(power(2,16));
+    //
+    //   /* SINGLE PARAMETER*/
+    //   const name = nm =>{
+    //     return nm + "Daudi";
+    //   }
+    //
+    //   document.write(name("Davinci  "));
+    //
+    //   let area = ()=>{
+    //     return 10+10;
+    //   }
+    //   document.write(`The areas is:${area()}`);
+    //
+    //
+    //   function findSolution(number){
+    //     function find(current, history){
+    //           if(current==number)
+    //           return history;
+    //
+    //          else if(current > number){
+    //           return null;
+    //         }
+    //         else {
+    //           return find(current+5, `(${history}+5)`)  ||
+    //           find(current*3, `(${history}*3)`);
+    //         }
+    //     }
+    //
+    //      return find(1, "1");
+    //   }
+    //
+    //   console.log(findSolution(113));
+    //
+    //
+    //   function minmax(a,b){
+    //     if(a<b){
+    //       return a;
+    //     }
+    //     else{
+    //       return b;
+    //     }
+    //   }
+    //
+    //   console.log("The smallest number is: " +minmax(6,9));
+
+    function isEven(num){
+      if(num == 0){
+        return "Even"
+      }
+      else if(num == 1){
+        return "Odd";
+      }
+      else if (num < 0) {
+        return "Not a whole number";
+      }
+      else{
+        return isEven(num-2);
+      }
+    }
+
+    //
+    // console.log(`10 is an ${isEven(10)} number`);
+    // console.log(`75 is an ${isEven(75)} number`);
+    // console.log(`-1 is an ${isEven(-1)} number`);
+
+
+   function countChar(sentence, char){
+     count = 0;
+     sentence = sentence.toUpperCase();
+
+     for(let i=0; i < sentence.length; i++){
+       if(sentence[i]==char){
+         count+=1;
+       }
+     }
+     return count;
+   }
+
+   function countBs(sentence){
+     console.log(`How many Bs? ${countChar(sentence,"B")}`);
+     console.log(`How many Ls? ${countChar(sentence,"L")}`);
+   }
+
+    console.log(countBs("llllbarnwjiwqwrtyoanvnsjnvjbvnhfbvkcnvab"));
+
+
+
+    /* DATA STRUCTURES */
+    let st = {
+      "squirrel": false,
+      "events": ["work", "touched tree", "pizza", "running"]
+    }
+
+    let st2 = JSON.stringify(st);
+
+    console.log(st2);
+    console.log(JSON.parse(st2));
+    for (let ev in st.events) console.log(st.events[ev]);
+
+    // console.log(sum(range(1,100)));
+
+
+    function range(a,b,c=1){
+      let list = [];
+
+        while(a<=b){
+          list.push(a);
+          a+=c;
+        }
+      return list;
+    }
+
+    function summ(lists){
+        let list = lists
+        let sum = 0;
+
+        for(let i in list){
+          sum+=list[i];
+        }
+        return sum;
+    }
+
+    console.log(`Sum from 1 to 10 is: ${summ(range(1,10))}`);
+
+    // console.log(range(1,10));
+
+  function reverseArrar(arr){
+      let i=arr.length-1;
+      let arry = [];
+      while(i>=0){
+        arry.push(arr[i]);
+        i-=1;
+      }
+      return arry;
+    }
+
+    function reverseArrayInPlace(array){
+      let i=array.length-1;
+      let arry = [];
+      while(i>=0){
+        arry.push(array[i]);
+        i-=1;
+      }
+      return arry;
+    }
+
+    console.log(range(1,10) );
+    console.log(reverseArrar(range(1,10)));
+    console.log(reverseArrayInPlace(reverseArrar(range(1,10))));
+
+    /* HIGH ORDER FUNCTIONS */
+    function greaterthan(n){
+      return m=> m>n;
+    }
+
+    let greatthan10 = greaterthan(11);
+
+    console.log(greatthan10(12));
+
+    function noisy(f) {
+      return (...args) => {
+        console.log("calling with", args);
+        let result = f(...args);
+        console.log("called with", args, ", returned", result);
+        return result;
+      };
+    }
+
+    noisy(Math.min)(3, 2, 1);
+
+    range(1,10).forEach(l => console.log(l));
+
+    function reduce(array, combine, start) {
+         let current = start;
+
+         for (let element of array) {
+           current = combine(current, element);
+         }
+          return current;
+    }
+
+      console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0));
+
+
+     </script>
+  </body>
+</html>

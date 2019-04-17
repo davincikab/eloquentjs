@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chap 6 Exercise</title>
+
+    <style media="screen">
+      body{
+        margin:0;
+        padding:0;
+      }
+      .dot{
+        height: 8px; width: 8px;
+        border-radius: 4px; /* rounds corners */
+         background: blue; position: absolute;
+      }
+
+      dot { position: absolute; display: block; border: 2px solid red; border-radius: 50px; height: 100px; width: 100px; }
+
+      .progressbar{
+          border:4px solid blue;
+          background: blue;
+          position: fixed;
+      }
+
+      #balloon{
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progressbar" id="progressbar"> </div>
+
+    <p>Click on <button type="button" name="button" >Click Me!</button> me</p>
+     <button type="button" name="button" >A</button>
+     <button type="button" name="button" >Cl</button>
+     <button type="button" name="button" >Cli</button>
+     <button type="button" name="button" >CliC</button>
+
+     <p>Drag the bar to change its width:</p>
+     <div style="background: orange; width: 60px; height: 20px"> </div>
+
+     <p>Name: <input type="text" name="" data-help="Your Name"></p>
+     <p>Emaail: <input type="text" name="" data-help="Your Email"></p>
+     <p id="help"></p>
+
+     <p id="balloon"> 🎈 </p>
+    <script src = "scp/chap15.js"></script>
+  </body>
+</html>
