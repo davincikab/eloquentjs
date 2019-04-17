@@ -4,17 +4,32 @@
     <meta charset="utf-8">
     <title>DOM</title>
   </head>
+  <style media="screen">
+    #balloon{
+      font-size: 80px;
+      position:relative;
+      text-align: center;
+    }
+
+    img{
+      height: 40px;
+      width:40px;
+      position:relative;
+    }
+  </style>
   <body>
 
     <h1>Our home</h1>
     <p> <em>Kenya</em> is our home</p>
     <p>We read books</p>
 
-    <p>Tour App <img src="scp/image_large.png" alt="App"></p>
-    <img src="scp/image_large.png" alt="App 1" >
+    <p style="text-align:center;">
+      <img src="scp/image_large.png" alt="App">
+    </p>
+    <!-- <img src="scp/image_large.png" alt="App 1" > -->
     <!-- <img src="scp/image_large.png" alt="App 2">
     <img src="scp/image_large.png" alt="App 3"> -->
-
+    <p id="balloon"> 🎈 </p>
 
 
     <button type="button" name="button" onclick="replace()">Replace</button>

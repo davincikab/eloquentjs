@@ -64,8 +64,26 @@ function time(name, action){
 
 time('CLEVER', ()=>{
   let target = document.getElementById('two');
+
   target.appendChild(document.createTextNode('XXXXX'));
   let total = Math.ceil(2000 / (target.offsetWidth/5));
 
   target.firstChild.nodeValue = 'X'.repeat(total);
 });
+
+// ANIMATION
+let target = document.getElementById("balloon");
+let angle = Math.PI / 2;
+function animate(time, lastTime){
+
+  if (lastTime != null) {
+    angle += (time - lastTime) * 0.001;
+  }
+
+  target.style.top = (Math.sin(angle) * 20) + "px";
+  target.style.left = (Math.cos(angle) * 200) + "px";
+
+  requestAnimationFrame(newTime => animate(newTime, time));
+}
+
+requestAnimationFrame(animate);
