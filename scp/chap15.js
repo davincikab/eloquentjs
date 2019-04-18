@@ -211,4 +211,12 @@ window.addEventListener('keydown',event=>{
     // insert a button list at top of the node: data-tabname
     // display style:none
     // Visible node
+
+    if(node.nodeType == Node.ELEMENT_NODE){
+      for (let i= 0; i <node.childNodes.length ; i++ ){
+        console.log(node.childNodes[i]);
+      }
+    }
   }
+
+astabs(document.querySelector('tab-panel'));
