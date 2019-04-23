@@ -115,3 +115,6 @@ function transfer(from, amount){
 }
 
 transfer('a', 200);
+
+// using for(;;) loop
+// Assertions
