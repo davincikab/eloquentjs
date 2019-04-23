@@ -76,3 +76,42 @@ try {
 } catch (e) {
   console.log(e);
 }
+
+
+// cleaning up after aexptions
+const account = {
+  a:400,
+  b:500,
+  c:600
+};
+
+function getAccount(){
+  let accName = prompt("Enter your account:");
+
+  if(!account.hasOwnProperty(accName)){
+    throw new Error(`Invalid account name: ${ accName}`);
+  }
+
+  return accName;
+}
+
+function transfer(from, amount){
+  if(account[from] < amount) return;
+  let progress = 0;
+  try {
+    account[from] -= amount;
+    console.log(account[from]);
+    progress = 1;
+    account[getAccount()] +=amount;
+
+    progress = 2;
+
+  } finally {
+    if (progress == 1) {
+      account[from] +=amount;
+      console.log(account[from]);
+    }
+  }
+}
+
+transfer('a', 200);
